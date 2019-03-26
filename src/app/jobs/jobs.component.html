@@ -1,0 +1,21 @@
+<!-- (ngSubmit)="jobData()" -->
+<form  class="input" novalidate>
+  <input type = "text" ngModel = "jobDescription" placeholder="Filter by title, benefits, companies, expertise" size = 50>
+  <input type = "text" ngModel = "jobLocation" placeholder="Filter by city, state, zip code or country" size = 50>
+  <input type="checkbox" ngModel = "jobFullTime" name = "jobFullTime"> Full Time Jobs Only
+  <button (click)="fetchJobData()">Submit</button>
+</form>
+<!-- <div>{{error}}</div> -->
+<!-- <table style="width:100%" ng-show="jobDetails && !error"> -->
+  <table style="width:100%" *ngIf="jobDetails">
+<tr>
+  <th> Title </th>
+  <th> Location </th>
+  <th> Type </th>
+</tr>
+<!-- <tr *ngFor = "let data in jobDetails">
+  <td><a ng-href = "#!/jobs/{{data.id}}">{{data.title}} </a></td>
+  <td> {{data.location}} </td>
+  <td> {{data.type}} </td>
+</tr> -->
+</table>
